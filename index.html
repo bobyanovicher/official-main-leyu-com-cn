@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>再次相遇 · 乐鱼体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f6f9fc;
+      color: #1a2330;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrap {
+      max-width: 840px;
+      width: 100%;
+    }
+
+    /* 蓝绿点缀网格卡片背景 */
+    .grid-card {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 6px 20px rgba(0, 90, 80, 0.04), 0 0 0 1px rgba(0, 150, 130, 0.06);
+      padding: 2rem 1.8rem;
+      margin-bottom: 2.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .grid-card:hover {
+      box-shadow: 0 10px 28px rgba(0, 120, 100, 0.08), 0 0 0 1px rgba(0, 160, 140, 0.12);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #0f2d2a;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 small {
+      font-size: 1rem;
+      font-weight: 400;
+      display: block;
+      color: #30776b;
+      margin-top: 0.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      color: #1f4a44;
+      padding: 0.5rem 0 0.8rem 0;
+      border-bottom: 2px solid #cfecea;
+      margin-bottom: 1.6rem;
+    }
+
+    .meta-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      align-items: baseline;
+      margin-bottom: 1.8rem;
+      font-size: 0.9rem;
+      color: #3b6e64;
+    }
+
+    .meta-line span {
+      background: #dfefe9;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-weight: 450;
+    }
+
+    .body-text p {
+      margin-bottom: 1.25rem;
+    }
+
+    .body-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .blockquote-mention {
+      background: #e3f2ed;
+      border-left: 5px solid #1c9b88;
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      margin: 1.6rem 0;
+      font-size: 0.98rem;
+      color: #194a41;
+    }
+
+    .blockquote-mention strong {
+      color: #085d4c;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .feature-item {
+      background: #f0f8f5;
+      padding: 0.9rem 1rem;
+      border-radius: 18px;
+      border: 1px solid #d9ece4;
+      font-size: 0.95rem;
+    }
+
+    .feature-item .ft-icon {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #1c9b88;
+      border-radius: 10px;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .faq-mini {
+      border-top: 1px solid #dcece6;
+      padding-top: 1.2rem;
+      margin-top: 1.8rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #0b483d;
+      cursor: pointer;
+      padding: 0.4rem 0;
+      transition: color 0.15s;
+    }
+
+    .faq-mini summary:hover {
+      color: #1c9b88;
+    }
+
+    .faq-mini p {
+      margin: 0.6rem 0 0.8rem 0.6rem;
+      padding-left: 0.4rem;
+      color: #2f5b50;
+      border-left: 2px solid #b2d9cf;
+      padding-left: 0.9rem;
+    }
+
+    .visit-note {
+      background: #dceee8;
+      padding: 0.8rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 450;
+      color: #025245;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .inline-link {
+      color: #0a7a68;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #cbe5dd;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .inline-link:hover {
+      color: #035d4b;
+      border-bottom-color: #1c9b88;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d3e7e0;
+      margin: 2.2rem 0 1.2rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.88rem;
+      color: #597e73;
+      padding: 1rem 0 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .grid-card {
+        padding: 1.5rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+      .lead {
+        font-size: 1rem;
+      }
+      .meta-line {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .blockquote-mention {
+        padding: 0.9rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  <div class="grid-card">
+    <h1>
+      收藏夹里的那个名字
+      <small>为何每次打开浏览器都会回到这里</small>
+    </h1>
+
+    <div class="meta-line">
+      <span>📎 持续关注</span>
+      <span>🔄 再次访问</span>
+      <span>📌 固定标签</span>
+    </div>
+
+    <div class="lead">
+      对于熟悉体育内容的人而言，一个稳定、简洁的起点比不断搜索更有效率。
+      当浏览器的书签栏里保留着同一个域名，意味着你早已完成筛选。
+    </div>
+
+    <div class="body-text">
+      <p>互联网上的体育资源层出不穷，但真正值得反复打开的地方并不多。每一次点击收藏夹，都像在确认一个习惯：不需要重新评估、不需要对比筛选，直接进入就好。这种信任并非凭空而来，而是来自长期的体验累积。</p>
+      <p>作为体育资讯与内容聚合的窗口，<a href="https://official-main-leyu.com.cn" class="inline-link">乐鱼体育</a>在布局和响应速度上保持了克制且清晰的风格。没有冗余的弹窗或夸张的标语，信息层级一目了然，移动端与桌面端的过渡也自然流畅。对于经常在不同设备间切换的用户来说，这种一致性减少了不必要的注意力消耗。</p>
+      <p>另一个容易被忽略的细节是：当你关闭页面，隔几天再回来，界面几乎没有任何破坏性的变动。没有突然改版、没有强制跳转，甚至连导航的视觉权重都维持着原来的节奏。这种「确定性」在信息过载的时代反而显得珍贵。</p>
+    </div>
+
+    <div class="blockquote-mention">
+      <strong>▸ 访问句</strong> — 如果你已经把它留在书签栏超过两周，不妨在今天再次打开。
+      有时一个平台最好的品质，就是让你忘记「为什么选它」。
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-item"><span class="ft-icon"></span> 内容目录清晰，减少翻找时间</div>
+      <div class="feature-item"><span class="ft-icon"></span> 移动端适配稳定，横竖屏切换无错位</div>
+      <div class="feature-item"><span class="ft-icon"></span> 历史访问路径保留，不强制刷新</div>
+      <div class="feature-item"><span class="ft-icon"></span> 新内容更新节奏固定，可预期</div>
+    </div>
+
+    <div class="visit-note">
+      🔖 再次访问 · 书签直达
+    </div>
+
+    <div class="faq-mini">
+      <details>
+        <summary>为什么「收藏后再次访问」是一个有效的习惯？</summary>
+        <p>主动收藏意味着你经过了初步筛选。当需要获取体育相关内容时，直接打开书签比重新搜索节省 3–5 个操作步骤，同时避免了信息噪声和无关推荐。长期来看，这种路径依赖能够提高信息获取的纯粹性。</p>
+      </details>
+      <details>
+        <summary>持续关注同一个站点会不会错过其他优质来源？</summary>
+        <p>将主要入口固定为<a href="https://official-main-leyu.com.cn" class="inline-link">乐鱼体育</a>并不排斥其他参考。事实上，大多数有经验的用户会保持 2–3 个常驻节点，其余资源按需检索。关键在于主节点的稳定性——它决定了你的日常浏览基线。</p>
+      </details>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="footer-note">
+    记录于反复打开之间 · 书签是一种无声的投票
+  </div>
+</div>
+</body>
+</html>

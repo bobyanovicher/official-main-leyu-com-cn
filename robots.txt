@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bobyanovicher.github.io/official-main-leyu-com-cn/sitemap.xml
