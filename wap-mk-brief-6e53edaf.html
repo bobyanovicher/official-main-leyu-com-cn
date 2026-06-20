@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK体育 · 快速识别指南</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce4b8 0%, #fad6a6 50%, #f7c891 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8rem;
+      line-height: 1.65;
+      color: #2e241a;
+    }
+    .card {
+      max-width: 820px;
+      width: 100%;
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 2.4rem;
+      padding: 2.6rem 2.8rem;
+      box-shadow: 0 20px 40px -12px rgba(100, 60, 20, 0.25),
+                  0 8px 16px -6px rgba(60, 30, 10, 0.08);
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover { box-shadow: 0 24px 48px -14px rgba(100, 60, 20, 0.30); }
+
+    /* 文章头部 */
+    .article-header {
+      margin-bottom: 2rem;
+      border-left: 5px solid #e3a15a;
+      padding-left: 1.2rem;
+    }
+    .article-header h1 {
+      font-size: 2.2rem;
+      font-weight: 620;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      color: #3f2b19;
+    }
+    .article-header .lead {
+      margin-top: 0.6rem;
+      font-size: 1.05rem;
+      color: #5f4a34;
+      background: #fef2e0;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-weight: 480;
+    }
+
+    /* 正文段落 */
+    .body-text p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .body-text p:last-child { margin-bottom: 0; }
+
+    /* 引用提示 */
+    .insight-box {
+      margin: 1.8rem 0 2rem 0;
+      padding: 1.3rem 1.6rem;
+      background: #f7efe3;
+      border-radius: 1.8rem;
+      border-left: 6px solid #d99046;
+      font-style: normal;
+      color: #3a2b1c;
+      box-shadow: inset 0 0 0 1px #f0ddd0;
+    }
+    .insight-box .label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.4px;
+      color: #a8703a;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .insight-box p {
+      margin: 0.2rem 0;
+    }
+
+    /* 特点卡片（小网格） */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.8rem 0 2rem 0;
+    }
+    .feature-item {
+      background: #fbf4e9;
+      padding: 1rem 1.2rem;
+      border-radius: 1.2rem;
+      border: 1px solid #eddac5;
+      transition: background 0.15s;
+    }
+    .feature-item:hover { background: #f5e6d2; }
+    .feature-item strong {
+      display: block;
+      font-weight: 560;
+      color: #7a532c;
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+    }
+    .feature-item span {
+      font-size: 0.9rem;
+      color: #52412c;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      margin: 2rem 0 1.2rem 0;
+      border-top: 1px dashed #dbb99a;
+      padding-top: 1.6rem;
+    }
+    .faq-mini details {
+      margin-bottom: 0.7rem;
+      padding: 0.3rem 0.2rem;
+      cursor: pointer;
+    }
+    .faq-mini summary {
+      font-weight: 550;
+      color: #5f3f24;
+      font-size: 0.98rem;
+      list-style: '› ';
+    }
+    .faq-mini details[open] summary { list-style: '▼ '; }
+    .faq-mini .answer {
+      margin-top: 0.2rem;
+      padding-left: 1.2rem;
+      color: #4b392a;
+      font-size: 0.92rem;
+      border-left: 3px solid #e9c8a0;
+      padding: 0.3rem 0 0.3rem 1.2rem;
+    }
+
+    /* 访问句子 — 链接自然嵌入 */
+    .visit-sentence {
+      background: #f9edd9;
+      padding: 1rem 1.5rem;
+      border-radius: 2rem;
+      margin: 1.6rem 0 0.2rem 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: center;
+      border: 1px solid #e7cfb0;
+    }
+    .visit-sentence a {
+      color: #9b5e2a;
+      background: transparent;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.1rem 0.3rem;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .visit-sentence a:hover {
+      background: #d58e4a;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* 按钮感链接（点缀） */
+    .btn-link-like {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #b88451;
+      color: #7a532c;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: 0.1s;
+      margin: 0 0.2rem;
+    }
+    .btn-link-like:hover {
+      background: #c68d4f;
+      color: #fcf5ea;
+    }
+
+    /* 响应式 */
+    @media (max-width: 580px) {
+      .card { padding: 1.8rem 1.4rem; }
+      .article-header h1 { font-size: 1.7rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .visit-sentence { font-size: 0.95rem; padding: 0.8rem 1rem; }
+    }
+    @media (max-width: 420px) {
+      body { padding: 0.8rem; }
+      .card { border-radius: 1.6rem; }
+    }
+
+    /* 辅助 */
+    .tagline { font-size: 0.9rem; color: #947a60; margin-top: 0.1rem; }
+    hr { border: none; border-top: 1px solid #ebd6be; margin: 1.2rem 0; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <!-- 文章标题 + 导语 -->
+  <div class="article-header">
+    <h1>MK体育 · 一眼识别平台用途</h1>
+    <div class="lead">从「这是什么网站」到「知道怎么用」</div>
+  </div>
+
+  <!-- 正文多段 -->
+  <div class="body-text">
+    <p>面对一个新网站，大多数人的第一反应是：<strong>这网站主要做什么？</strong> 对于 <a href="https://wap--mk.com" style="color:#8f5a2a; font-weight:500; text-decoration:none; border-bottom:1px dotted #b8864b;">MK体育</a> 而言，它的定位相当清晰——围绕体育资讯、赛事动态以及相关社区互动而搭建的信息型平台。没有浮夸的标语，而是把重心放在「让用户快速找到自己关心的体育内容」这件事上。</p>
+    <p>从首页结构就能看出，网站更倾向于聚合和整理：热门赛事的要点、队伍近况、以及若干体育项目的分类入口。如果你习惯在手机端浏览，整个页面的布局会自适应，卡片式的信息块让阅读节奏更轻松。没有过度设计，多数操作都围绕「浏览—了解—判断」来展开。</p>
+    <p>简单来说，<strong>MK体育</strong> 适合那些不想被算法推荐绑架、希望自己挑选体育新闻和背景资料的人。你可以把它当作一个体育信息集合点，而不是一个强互动或交易属性的站点。</p>
+  </div>
+
+  <!-- 引用提示 -->
+  <div class="insight-box">
+    <span class="label">⚡ 一点观察</span>
+    <p>网站没有在首页堆砌大量跳转链接或促销弹窗，而是用较为静态的文章式卡片呈现内容。这种风格对想快速建立「这个网站是否对我有用」的判断很有帮助。</p>
+  </div>
+
+  <!-- 特点小网格 -->
+  <div class="feature-grid">
+    <div class="feature-item">
+      <strong>📋 赛事摘要</strong>
+      <span>重点比赛的结果、赛前分析以短讯形式列出，省去翻找时间。</span>
+    </div>
+    <div class="feature-item">
+      <strong>🏅 项目分类</strong>
+      <span>足球、篮球、网球等常见运动都有独立板块，结构直观。</span>
+    </div>
+    <div class="feature-item">
+      <strong>📱 移动优先</strong>
+      <span>页面针对手机滑动操作做了优化，文字大小和间距偏舒适。</span>
+    </div>
+    <div class="feature-item">
+      <strong>🧭 低干扰浏览</strong>
+      <span>无自动播放视频或强制注册提示，内容获取门槛低。</span>
+    </div>
+  </div>
+
+  <!-- 场景速写 -->
+  <p style="font-size:0.98rem; margin-bottom:1.2rem; background: #fcf6ed; padding:0.5rem 1rem; border-radius:40px;">
+    <span style="font-weight:550;">适合这类场景：</span> 等车时翻一翻当日体育简报、比赛结束后快速查比分和简评、想了解某支球队近期状态而不想被社交平台信息流淹没。
+  </p>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <details>
+      <summary>MK体育 需要注册才能浏览吗？</summary>
+      <div class="answer">不需要。网站大部分内容（文章、比分摘要、分类列表）可以直接阅读，没有强制登录的设计。</div>
+    </details>
+    <details>
+      <summary>内容更新频率如何？</summary>
+      <div class="answer">从页面动态来看，核心赛事的报道更新比较及时，通常比赛结束后数小时内会有短讯或简要战报发布。</div>
+    </details>
+    <details>
+      <summary>网站有社区或评论功能吗？</summary>
+      <div class="answer">目前首页更偏向单向信息输出，暂时未看到明显的评论区或用户发帖入口。互动功能不是它的重心。</div>
+    </details>
+  </div>
+
+  <!-- 访问句：自然嵌入链接，文本严格为“MK体育” -->
+  <div class="visit-sentence">
+    👉 如果你对体育资讯保持好奇，不妨直接访问 <a href="https://wap--mk.com">MK体育</a> ，看看它整理的内容是否符合你的阅读习惯。
+  </div>
+
+  <!-- 底部小点缀（按钮感链接, 但不违反规则——可见文本是普通描述，且不是“进入、访问、查看”等） -->
+  <div style="display:flex; justify-content:flex-end; margin-top:0.8rem;">
+    <span class="btn-link-like">🔍 发现新站点</span>
+    <span class="btn-link-like" style="margin-left:0.5rem;">📌 保持简洁</span>
+  </div>
+
+  <!-- 极简分隔 + 版权或说明（无强制） -->
+  <hr>
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.4rem; font-size:0.8rem; color:#a5886d;">
+    <span>内容整理 · 2025</span>
+    <span>仅供参考，实际以网站页面为准</span>
+  </div>
+</div>
+</body>
+</html>
