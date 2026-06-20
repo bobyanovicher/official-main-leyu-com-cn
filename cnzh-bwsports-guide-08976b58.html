@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杂志专题 · 宝威体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f3f3;
+            font-family: 'Inter', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Hero 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0f111a 0%, #1e2233 100%);
+            padding: 120px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #f3f3f3;
+            clip-path: ellipse(70% 80% at 50% 100%);
+            opacity: 0.3;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        .hero .tagline {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.18rem;
+            color: #c8ccdf;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 24px;
+            line-height: 1.7;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .intro-section {
+            background: #ffffff;
+            border-radius: 32px;
+            margin-top: -32px;
+            padding: 56px 48px 48px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .section-title .accent {
+            color: #b8860b;
+        }
+
+        .lead {
+            font-size: 1.12rem;
+            color: #2e2e2e;
+            margin-bottom: 32px;
+            border-left: 4px solid #b8860b;
+            padding-left: 20px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin: 32px 0 24px;
+        }
+
+        .card {
+            background: #f8f7f4;
+            border-radius: 20px;
+            padding: 28px 24px;
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1f1f1f;
+        }
+
+        .card p {
+            color: #3a3a3a;
+            font-size: 0.96rem;
+        }
+
+        .faq-summary {
+            background: #f0efe9;
+            border-radius: 24px;
+            padding: 28px 32px;
+            margin: 40px 0 20px;
+        }
+
+        .faq-summary dt {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 24px;
+            color: #1f1f1f;
+        }
+
+        .faq-summary dt:first-of-type {
+            margin-top: 0;
+        }
+
+        .faq-summary dd {
+            margin: 6px 0 0 0;
+            color: #3b3b3b;
+            padding-left: 4px;
+        }
+
+        a {
+            color: #b8860b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #8b6914;
+            border-bottom-color: #8b6914;
+        }
+
+        .footnote {
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 1px solid #e0ddd5;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #4a4a4a;
+        }
+
+        .footnote a {
+            font-weight: 600;
+        }
+
+        /* 响应式 */
+        @media (max-width: 780px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .intro-section {
+                padding: 36px 24px 32px;
+                margin-top: -20px;
+                border-radius: 24px;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .grid-cards {
+                gap: 20px;
+            }
+            .faq-summary {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero .tagline {
+                font-size: 1rem;
+            }
+            .lead {
+                font-size: 1rem;
+                padding-left: 14px;
+            }
+        }
+
+        /* 细节：微标记 */
+        .badge {
+            display: inline-block;
+            background: #b8860b0c;
+            color: #7a5f0c;
+            font-size: 0.78rem;
+            padding: 2px 14px;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            border: 1px solid #dbb96a44;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>宝威体育 · 专题</h1>
+    <div class="tagline">
+        一份关于站点背景、信息结构以及可信查阅环境的简明杂志式介绍。
+    </div>
+</header>
+
+<main class="container">
+    <div class="intro-section">
+
+        <!-- 第一段：背景说明 -->
+        <span class="badge">背景 · 概览</span>
+        <h2 class="section-title">从信息整合到<span class="accent">内容呈现</span></h2>
+        <p class="lead">
+            <a href="https://cnzh-bwsports.com">宝威体育</a> 是一个以体育资讯与赛事数据整合为侧重的网络平台。自搭建以来，其内容架构围绕赛事动态、运动项目分类以及辅助性信息模块展开，力求为用户提供结构清晰的查阅环境。
+        </p>
+
+        <!-- 第二段：三段自然介绍 —— 卡片化处理 (三点式) -->
+        <div class="grid-cards">
+            <div class="card">
+                <h3>内容分类逻辑</h3>
+                <p>站点将信息按运动类型、赛事阶段及数据维度区分，例如联赛积分、赛程时间线、队伍概况等。分类体系可降低信息过载，让浏览者按需定位。</p>
+            </div>
+            <div class="card">
+                <h3>呈现与可读性</h3>
+                <p>采用相对克制的排版，避免过度动态元素干扰阅读。数据表格与短文描述结合，兼顾信息密度与视觉节奏，日常查阅体验较为流畅。</p>
+            </div>
+            <div class="card">
+                <h3>更新与维护</h3>
+                <p>内容维护周期以赛事日程为参照，重点更新集中于主流联赛及杯赛阶段。页面版本及数据引用会标注相应时间，提升参考可靠性。</p>
+            </div>
+        </div>
+
+        <!-- 第三段：更深入的站点说明——可信角度与使用提示 -->
+        <h2 class="section-title" style="margin-top: 36px;">使用方法与<span class="accent">可信说明</span></h2>
+        <p style="margin-bottom: 16px;">
+            平台本身不产生原始赛事内容，而是对公开可获取的赛事信息进行汇编、整理与二次呈现。所有赛果、排名及统计数据均基于明确的引用来源（通常在页面内附带参考时间戳），使用者可根据标注溯源对比。建议在参考数据时核对多个来源，以获取更全面的判断。
+        </p>
+        <p style="margin-bottom: 16px;">
+            对于希望直接访问站点的用户，<a href="https://cnzh-bwsports.com">宝威体育</a> 的主页提供了当前排布的最新内容入口。导航结构遵循“运动类别 → 赛事 → 详情”的逻辑，较为直观。新手可在首页浏览主要栏目后，再进入具体分支。
+        </p>
+        <p>
+            另外，网站未植入任何自动跳转或强制弹窗，所有链接均为主动触发。虽无法保证外部资源的永久可用性，但团队对内部信息页会进行定期检查与修复。如遇页面异常，可通过站点内联系方式（位于页尾区域）进行反馈。
+        </p>
+
+        <!-- FAQ 摘要（差异化章节） -->
+        <div class="faq-summary">
+            <dl>
+                <dt>数据更新频率如何？</dt>
+                <dd>主流足球/篮球联赛通常于比赛结束后 2–6 小时内更新赛果与积分；部分非热门赛事会略有延迟，建议以页面标注时间为准。</dd>
+
+                <dt>移动端适配情况？</dt>
+                <dd>当前界面采用响应式栅格，在手机及平板设备上均可正常阅读，表格会自动折行并调整字号。部分复杂数据表建议横屏查看。</dd>
+
+                <dt>是否提供历史数据下载？</dt>
+                <dd>不直接提供批量导出功能，但网页端保留了近三个赛季的常规赛程与结果，用户可通过逐页查阅获取所需记录。</dd>
+            </dl>
+        </div>
+
+        <!-- 页尾访问提示 (自然嵌入) -->
+        <div class="footnote">
+            <p>若想进一步了解 <a href="https://cnzh-bwsports.com">宝威体育</a> 的信息结构与最新内容，可直接访问其首页。专题介绍所涉细节均基于站点公开栏目，不构成任何附加承诺。</p>
+            <p style="margin-top: 8px; font-size: 0.85rem; color: #777;">杂志式导读 · 信息供参考</p>
+        </div>
+
+    </div>
+</main>
+
+</body>
+</html>
