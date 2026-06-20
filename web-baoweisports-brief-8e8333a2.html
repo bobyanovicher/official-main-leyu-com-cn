@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宝威体育 · 专注运动视野</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Helvetica, Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* hero 区 */
+    .hero {
+      background: linear-gradient(145deg, #eef1f5 0%, #e2e7ee 100%);
+      border-radius: 28px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.02);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #0b1c2e;
+      display: inline-block;
+      background: #f4f6f9;
+      padding: 0.1em 0.6em 0.1em 0.3em;
+      border-radius: 0 12px 12px 0;
+      margin-left: -0.3em;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .hero p {
+      max-width: 780px;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #2b3f57;
+      font-weight: 380;
+      border-left: 4px solid #8fa6c0;
+      padding-left: 1.4rem;
+    }
+
+    /* 卡片通用 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-bottom: 2.8rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 1.8rem 2rem 2rem 2rem;
+      border: 1px solid #e5eaf0;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.01);
+      transition: box-shadow 0.15s;
+    }
+    .card:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.03), 0 4px 8px rgba(0, 0, 0, 0.02);
+    }
+    .card h2 {
+      font-size: 1.7rem;
+      font-weight: 470;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+      border-bottom: 2px solid #d9e1ec;
+      padding-bottom: 0.4rem;
+      display: inline-block;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 460;
+      margin: 1rem 0 0.4rem 0;
+      color: #1f3a57;
+    }
+    .card p {
+      margin: 0.6rem 0 0.2rem 0;
+      color: #2f3f52;
+    }
+    .card .subnote {
+      font-size: 0.95rem;
+      color: #65758b;
+      margin-top: 0.5rem;
+    }
+    .inline-link {
+      color: #1e5a8a;
+      text-decoration: none;
+      font-weight: 480;
+      border-bottom: 1px dotted #9bb5d0;
+      transition: border 0.1s, color 0.1s;
+    }
+    .inline-link:hover {
+      color: #0a3154;
+      border-bottom: 1px solid #0a3154;
+    }
+
+    /* 底部区域 */
+    .footer-note {
+      background: #eef2f8;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #dce3ed;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      margin-top: 0.8rem;
+    }
+    .footer-note p {
+      margin: 0.35rem 0;
+      color: #2b405c;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body { padding: 1.2rem 1rem; }
+      .hero { padding: 2rem 1.2rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; padding-left: 0.8rem; }
+      .card { padding: 1.4rem 1.2rem; }
+      .card h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- hero 横幅 -->
+  <div class="hero">
+    <h1>宝威体育</h1>
+    <p>运动资讯的连续观察 · 一份值得被反复打开的数字存档</p>
+  </div>
+
+  <!-- 背景说明 + 三段自然介绍 杂志专题式 -->
+  <div class="card-grid">
+
+    <div class="card">
+      <h2>为什么需要再次访问</h2>
+      <p>信息流日更千条，但真正值得沉淀的深度内容，往往藏在一处稳定的据点里。<strong>宝威体育</strong>并非追逐瞬时的热点，它更侧重赛事脉络、训练科学与运动文化中的长期议题。当你结束一天的工作，重新打开这个页面，看到的不是重复的标题，而是一套经过梳理的体育知识体系。这正是持续访问的价值——每一次回访，都是对运动认知的补完。</p>
+      <p class="subnote">从战术演变到运动员传记，专题内容保持更新与修正，适合作为个人“运动书架”固定章节。</p>
+    </div>
+
+    <div class="card">
+      <h2>收藏，是为下一次出发做准备</h2>
+      <p>浏览器的书签栏里，总有几个网站被反复点开——它们提供的不只是信息，更是一种思维框架。将 <a href="https://web-baoweisports.com" class="inline-link">宝威体育</a> 加入收藏夹，意味着你拥有了一个不断生长的体育参考坐标。无论是想回顾某届赛事的技术统计，还是对比不同训练体系的逻辑，这里都能为你节省大量检索时间。</p>
+      <p>熟悉感与陌生感并存：界面语言保持一贯的清晰，但每篇解读都会引入新的数据视角或历史对照。收藏它，就是收藏一扇随时可推开的观察窗。</p>
+      <h3>一个习惯性的动作</h3>
+      <p>很多读者习惯在周末或赛季切换时，打开收藏夹里的站点，看看近期的专题是否更新。这种轻量的“回访”不需要刻意安排，却能让碎片信息连接成网。</p>
+    </div>
+
+    <div class="card">
+      <h2>持续关注：从单向浏览到知识积累</h2>
+      <p>体育行业的深度内容往往散落在不同出版物中，而<strong>宝威体育</strong>尝试做一次聚合与过滤。从运动生理学到俱乐部运营，从奥运项目解析到户外趋势，每一篇文章都经过交叉验证，避免空泛的断言。持续关注这里，你不再是被动接收资讯的读者，而是主动构建知识结构的参与者。</p>
+      <p>当你下次与朋友聊起某项运动规则的变化，或想了解某个训练方法的原理，很可能在宝威体育的某个专题页中找到清晰的脉络。这也是我们坚持不堆砌关键词、不写诱导性标题的原因——用内容本身赢得回访。</p>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示 + FAQ 摘要风格 -->
+  <div class="footer-note">
+    <p><strong>访问提示</strong> · 如果你已有一段时间没有打开这个站点，现在正是重新翻阅的好时机。新近上线的专题包括“耐力运动中的心率区间再讨论”与“集体球类项目防守体系演变简史”。</p>
+    <p style="margin-top: 0.8rem;"><strong>常见疑问摘要</strong> · 内容更新频率？通常每5–10天一篇完整专题，并持续修订旧文数据偏差。是否有移动端适配？页面在手机与平板均可流畅阅读。如何找回？直接输入域名或从书签栏打开 <a href="https://web-baoweisports.com" class="inline-link">宝威体育</a> 即可。</p>
+    <p style="margin-top: 0.8rem; font-size: 0.95rem; color: #4f657f;">—— 专题式的阅读节奏，比碎片刷新更适合长期记忆 ——</p>
+  </div>
+
+</div>
+</body>
+</html>
